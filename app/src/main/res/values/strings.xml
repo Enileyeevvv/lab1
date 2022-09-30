@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">lab 1</string>
+    <string name="Header_Back_Arrow">back_arrow</string>
+    <string name="Header_Text">Notifications</string>
+    <string name="Header_Search">Back_Arrow</string>
+    <string name="Comment_Like">Like</string>
+    <string name="Comment_UserImage">User</string>
+    <string name="Comment_UserName">Roman Kamushken</string>
+    <string name="Comment_UserData">2 days ago</string>
+    <string name="Comment_Text">Check out awesome updates for Android design kit for Figma. Now more screens and more categories.</string>
+    <string name="Comment_Replays">117 replays</string>
+    <string name="Comment_UserName2">Tina Turbina</string>
+    <string name="Comment_UserData2">18 minutes ago</string>
+    <string name="Comment_Text2">“into component container and with resizing constraints set????”</string>
+    <string name="Comment_Replays2">117 replays</string>
+    <string name="Comment_UserName3">Tomek Kuwalskij</string>
+    <string name="Comment_UserData3">2 days ago</string>
+    <string name="Comment_Text3">“into component container and with resizing constraints set????”</string>
+    <string name="Comment_Replays3">117 replays</string>
+    <string name="Footer_ShoppingBag">Shopping Bag</string>
+    <string name="Footer_Book">Book</string>
+    <string name="Footer_ShoppingCart">Shopping Cart</string>
+    <string name="Footer_Tag">Tag</string>
+    <string name="Footer_Favorite">Shopping Bag</string>
+    <string name="Footer_FavoriteText">Account</string>
+</resources>
