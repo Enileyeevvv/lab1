@@ -1,319 +1,360 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:layout_height="fill_parent">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
         android:layout_width="fill_parent"
-        android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp">
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            app:srcCompat="@drawable/arrow_back"
-            android:contentDescription="@string/Header_Back_Arrow"
+            android:id="@+id/imageView"
             style="@style/Icon"
-            android:layout_alignParentStart="true"
-            android:layout_centerInParent="true"/>
+            android:contentDescription="@string/Header_Back_Arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_back" />
 
         <TextView
+            android:id="@+id/textView"
             style="@style/HeaderText"
-            android:text="@string/Header_Text"/>
+            android:text="@string/Header_Text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            app:srcCompat="@drawable/search"
-            android:contentDescription="@string/Header_Search"
+            android:id="@+id/imageView2"
             style="@style/Icon"
-            android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"/>
+            android:contentDescription="@string/Header_Search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/search" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/article_list"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingRight="5dp"
-        android:paddingTop="10dp"
-        android:paddingLeft="5dp"
-        android:paddingBottom="10dp"
-        android:orientation="vertical"
-        android:layout_below="@id/header">
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:background="@color/gray"
+            android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:padding="10dp"
-            android:background="@color/gray">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                app:cardCornerRadius="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="50dp">
+                <ImageView
+                    style="@style/RoundedIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/Comment_UserImage"
+                    tools:srcCompat="@tools:sample/avatars" />
 
-                    <ImageView
-                        style="@style/RoundedIcon"
-                        android:contentDescription="@string/Comment_UserImage"
-                        tools:srcCompat="@tools:sample/avatars" />
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/Text"
-                        android:text="@string/Comment_UserName"
-                        android:layout_marginStart="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Comment_UserData"
-                        android:layout_marginStart="10dp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <TextView
+                android:id="@+id/textView2"
+                style="@style/Text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/Comment_UserName"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/Comment_UserData"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView4"
                 style="@style/Text"
                 android:text="@string/Comment_Text"
-                android:layout_marginTop="10dp"/>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    style="@style/BlueText"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/Comment_Replays"/>
-
-                <ImageView
-                    style="@style/Icon"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true"
-                    android:contentDescription="@string/Comment_Like"
-                    app:srcCompat="@drawable/like" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
-            android:background="@color/gray">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="50dp">
-
-                    <ImageView
-                        style="@style/RoundedIcon"
-                        android:contentDescription="@string/Comment_UserImage"
-                        tools:srcCompat="@tools:sample/avatars"/>
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/Text"
-                        android:text="@string/Comment_UserName2"
-                        android:layout_marginStart="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Comment_UserData2"
-                        android:layout_marginStart="10dp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
+                style="@style/BlueText"
+                android:text="@string/Comment_Replays"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <ImageView
+                style="@style/Icon"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/Comment_Like"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:srcCompat="@drawable/like" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    style="@style/RoundedIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/Comment_UserImage"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/Text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/Comment_UserName2"
+                app:layout_constraintStart_toEndOf="@+id/cardView2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/Comment_UserData2"
+                app:layout_constraintStart_toEndOf="@+id/cardView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView7"
                 style="@style/Text"
                 android:text="@string/Comment_Text2"
-                android:layout_marginTop="10dp"/>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    style="@style/BlueText"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/Comment_Replays2"/>
-
-                <ImageView
-                    style="@style/Icon"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true"
-                    android:contentDescription="@string/Comment_Like"
-                    app:srcCompat="@drawable/like" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
-            android:background="@color/gray">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="50dp">
-
-                    <ImageView
-                        style="@style/RoundedIcon"
-                        android:contentDescription="@string/Comment_UserImage"
-                        tools:srcCompat="@tools:sample/avatars"/>
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/Text"
-                        android:text="@string/Comment_UserName3"
-                        android:layout_marginStart="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Comment_UserData3"
-                        android:layout_marginStart="10dp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
             <TextView
-                style="@style/Text"
-                android:text="@string/Comment_Text3"
-                android:layout_marginTop="10dp"/>
+                style="@style/BlueText"
+                android:text="@string/Comment_Replays2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-            <RelativeLayout
+            <ImageView
+                style="@style/Icon"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/Comment_Like"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7"
+                app:srcCompat="@drawable/like" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    style="@style/BlueText"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/Comment_Replays3"/>
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    style="@style/Icon"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true"
-                    android:contentDescription="@string/Comment_Like"
-                    app:srcCompat="@drawable/like" />
+                    style="@style/RoundedIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/Comment_UserImage"
+                    tools:srcCompat="@tools:sample/avatars" />
 
-            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/textView8"
+                style="@style/Text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/Comment_UserName3"
+                app:layout_constraintStart_toEndOf="@+id/cardView3"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/Comment_UserData3"
+                app:layout_constraintStart_toEndOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView10"
+                style="@style/Text"
+                android:text="@string/Comment_Text3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <TextView
+                style="@style/BlueText"
+                android:text="@string/Comment_Replays3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <ImageView
+                style="@style/Icon"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/Comment_Like"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                app:srcCompat="@drawable/like" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:padding="10dp">
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
+            android:id="@+id/imageView5"
             style="@style/Icon"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/shopping_bag"
-            android:contentDescription="@string/Footer_ShoppingBag"/>
+            android:contentDescription="@string/Footer_ShoppingBag"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/shopping_bag" />
 
         <ImageView
+            android:id="@+id/imageView6"
             style="@style/Icon"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/book"
-            android:contentDescription="@string/Footer_Book"/>
+            android:contentDescription="@string/Footer_Book"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView7"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/book" />
 
         <ImageView
+            android:id="@+id/imageView7"
             style="@style/Icon"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/shopping_cart"
-            android:contentDescription="@string/Footer_ShoppingCart"/>
+            android:contentDescription="@string/Footer_ShoppingCart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+            app:layout_constraintStart_toStartOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/shopping_cart" />
 
         <ImageView
+            android:id="@+id/imageView3"
             style="@style/Icon"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/tag_heart"
-            android:contentDescription="@string/Footer_Tag"/>
+            android:contentDescription="@string/Footer_Tag"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tag_heart" />
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/favorite"
                 style="@style/Icon"
-                app:tint="@color/blue"
-                app:srcCompat="@drawable/favorite"
-                android:contentDescription="@string/Footer_Favorite"
                 android:layout_alignParentTop="true"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/Footer_Favorite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/favorite"
+                app:tint="@color/blue" />
 
             <TextView
-                android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/favorite"
                 android:text="@string/Footer_FavoriteText"
-                android:textColor="@color/blue"/>
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/favorite" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
